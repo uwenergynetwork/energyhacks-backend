@@ -28,8 +28,8 @@ class MockDb:
 	def __exit__(self, type, value, traceback):
 		return None
 
-	def execute(self, qeury):
-		self.queries.append(qeury)
+	def execute(self, query, *args):
+		self.queries.append(query % tuple(args))
 
 def getDb():
 	global db
@@ -77,7 +77,7 @@ class MockMailchimpClient:
 		self.members = self
 		self.lastDataAdded = None
 
-	def create_or_update(self, list_id, data):
+	def create(self, list_id, data):
 		self.lastDataAdded = data
 
 mailchimpClient = None

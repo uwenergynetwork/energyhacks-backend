@@ -30,9 +30,7 @@ def earlyEmailSignup(request):
 			return buildReponse("Email already subscribed!", 400)
 
 		with getDb().connect() as conn:
-			query = "INSERT into early_signups VALUES (NULL, '%s')" % request_json["email"]
-			print("Executing %s" % query)
-			conn.execute(query)
+			conn.execute("INSERT into early_signups VALUES (NULL, '%s')", request_json["email"])
 	
 		return buildReponse('', 200)
 	else:
