@@ -26,6 +26,6 @@ jobs:
         gcloud functions deploy earlyEmailSignup --project uwenca --service-account github-actions@uwenca.iam.gserviceaccount.com  --source https://source.developers.google.com/projects/uwenca/repos/github_uwenergynetwork_energyhacks-backend/moveable-aliases/master
     - name: Deploy Applications Function
       run: |
-        gcloud functions deploy applications --project uwenca --service-account github-actions@uwenca.iam.gserviceaccount.com  --source https://source.developers.google.com/projects/uwenca/repos/github_uwenergynetwork_energyhacks-backend/moveable-aliases/master --trigger-http https://us-central1-uwenca.cloudfunctions.net/applications
+        gcloud functions deploy applications --project uwenca --service-account github-actions@uwenca.iam.gserviceaccount.com  --source https://source.developers.google.com/projects/uwenca/repos/github_uwenergynetwork_energyhacks-backend/moveable-aliases/master
 
 
