@@ -1,7 +1,7 @@
 {
-    "firstName": "George",
-    "lastName": "Lucas",
-    "phoneNumber": "6476666666",
+    "first_name": "George",
+    "last_name": "Lucas",
+    "phone_number": "6476666666",
     "email": "georgelucas@gmail.com",
     "school": "University of Waterloo"
 }

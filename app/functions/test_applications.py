@@ -20,4 +20,4 @@ def test_addsSignupToDb():
         ",".join(data.values()))
 
     assert(
-        getDb().queries[0] == testQuery)
+        getDb().queries[-1] == testQuery)

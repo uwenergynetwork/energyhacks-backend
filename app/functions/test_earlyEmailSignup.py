@@ -9,10 +9,9 @@ def test_addsEmailToSignupDatabase():
     earlyEmailSignup(req)
 
     # Must be added to our database and to mailchimps side
-    assert(
-        getDb().queries[2] == "INSERT into early_signups VALUES (NULL, jamiexxyyzz@gmail.com)")
-    assert(getMailchimpClient(
-    ).lastDataAdded["email_address"] == "jamiexxyyzz@gmail.com")
+    assert(getDb().queries[-1] == "INSERT into early_signups VALUES (NULL, jamiexxyyzz@gmail.com)")
+
+    assert(getMailchimpClient().lastDataAdded["email_address"] == "jamiexxyyzz@gmail.com")
 
 
 def test_invalidEmailsReturns400():
