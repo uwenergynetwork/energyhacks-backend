@@ -15,9 +15,19 @@ def test_addsSignupToDb():
     req = Mock(get_json=Mock(return_value=data), method="POST")
     applications(req)
 
-    # Ensure that the
+    bits = ["travel", "first_hack", "rating_diversity"]
+
     testQuery = "INSERT into applications VALUES ({})".format(
-        ",".join(data.values()))
+        ",".join(data[w] if w in bits else '"{0}"'.format(data[w]) for w in data.keys()))
+
+    print(testQuery)
 
     assert(
         getDb().queries[0] == testQuery)
+
+
+def test_getFromDb():
+    req = Mock(method="GET")
+    res = applications(req)
+
+    print(res)

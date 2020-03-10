@@ -44,9 +44,9 @@ def getDb():
             sqlalchemy.engine.url.URL(
                 drivername="mysql+pymysql",
                 host=db_host if os.name == 'nt' else None,
-                username=db_user,
-                password=db_pass,
-                database=db_name,
+                username="root",
+                password="uwEnergyHacks2020",
+                database="energyhacks-prod",
                 query={"unix_socket": "/cloudsql/{}".format(
                     cloud_sql_connection_name)} if os.name != "nt" else {},
             ),
